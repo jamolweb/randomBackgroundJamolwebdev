@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>randomColor with Jamolwebdev</title>
+    <!--======== CSS ========-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background: #000;
+      }
+      .btn-change {
+        width: 200px;
+        height: 30px;
+        background: blue;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .btn-change:hover {
+        background: rgb(5, 5, 113);
+      }
+    </style>
+  </head>
+  <body>
+    <!--======== HTML ========-->
+    <button class="btn-change">Change background</button>
+    <!--======== JAVASCRIPT ========-->
+    <script>
+      let btnChange = document.querySelector(".btn-change");
+      let body = document.querySelector("body");
+
+      btnChange.addEventListener("click", () => {
+        let r = Math.random() * 255;
+        let g = Math.random() * 255;
+        let b = Math.random() * 255;
+        let result = `${parseInt(r)},${parseInt(g)},${parseInt(b)}`;
+        body.style.background = `rgb(${result})`;
+      });
+    </script>
+  </body>
+</html>
